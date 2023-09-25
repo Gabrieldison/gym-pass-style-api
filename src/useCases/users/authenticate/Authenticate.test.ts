@@ -2,7 +2,7 @@ import { beforeEach, describe, expect, it } from "vitest";
 import { InMemoryUsersRepository } from "@/repositories/in-memory/in-memory-users-repository";
 import { hash } from "bcryptjs";
 import { AuthenticateUseCase } from "./AuthenticateUseCase";
-import { InvalidCredentialsError } from "./errors/invalid-credentials-error";
+import { InvalidCredentialsError } from "@/errors/invalid-credentials-error";
 
 let inMemoryUsersRepository: InMemoryUsersRepository;
 let sut: AuthenticateUseCase;
@@ -30,8 +30,6 @@ describe("Authenticate Use Case", () => {
     expect(user.id).toEqual(expect.any(String));
   });
 
-  //////////////////
-
   it("should not be able to authenticate with wrong email", async () => {
     await expect(() =>
       sut.execute({
@@ -40,8 +38,6 @@ describe("Authenticate Use Case", () => {
       })
     ).rejects.toBeInstanceOf(InvalidCredentialsError);
   });
-
-  ////////////////
 
   it("should not be able to authenticate with wrong password", async () => {
     await inMemoryUsersRepository.create({

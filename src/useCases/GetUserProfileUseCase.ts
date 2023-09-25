@@ -1,5 +1,4 @@
 import { IUsersRepository } from "@/repositories/IUsersRepository";
-import { UserAlreadyExistsError } from "./errors/user-already-exists-error";
 import { User } from "@prisma/client";
 import { ResourceNotFoundError } from "./errors/resource-not-found-erros";
 
@@ -11,7 +10,7 @@ interface GetUserProfileUseCaseResponse {
   user: User;
 }
 
-export class RegisterUseCase {
+export class GetUserProfileUseCase {
   constructor(private usersRepository: IUsersRepository) {}
 
   async execute({

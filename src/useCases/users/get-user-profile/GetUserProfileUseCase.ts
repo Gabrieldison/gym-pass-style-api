@@ -1,5 +1,5 @@
-import { ResourceNotFoundError } from "@/errors/resource-not-found-erros";
 import { IUsersRepository } from "@/repositories/contracts/IUsersRepository";
+import { ResourceNotFoundError } from "@/shared/errors/resource-not-found-erros";
 import { User } from "@prisma/client";
 
 interface GetUserProfileUseCaseRequest {

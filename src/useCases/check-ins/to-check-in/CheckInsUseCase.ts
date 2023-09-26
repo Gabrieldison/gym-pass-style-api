@@ -2,9 +2,9 @@ import { CheckIn } from "@prisma/client";
 import { ICheckInsRepository } from "@/repositories/contracts/ICheckinRepository";
 import { IGymsRepository } from "@/repositories/contracts/IGymsRepository";
 import { getDistanceBetweenCoordinates } from "@/utils/get-distance-between-coordinates";
-import { ResourceNotFoundError } from "@/errors/resource-not-found-erros";
-import { MaxDistanceError } from "@/errors/max-distance-error";
-import { MaxNumberOfCheckInsError } from "@/errors/max-number-of-check-ins-error";
+import { ResourceNotFoundError } from "@/shared/errors/resource-not-found-erros";
+import { MaxDistanceError } from "@/shared/errors/max-distance-error";
+import { MaxNumberOfCheckInsError } from "@/shared/errors/max-number-of-check-ins-error";
 
 interface CheckinUseCaseRequest {
   userId: string;
